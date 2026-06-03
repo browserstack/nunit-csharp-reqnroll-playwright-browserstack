@@ -1,0 +1,26 @@
+# Build output
+bin/
+obj/
+
+# .NET
+*.user
+*.suo
+.vs/
+
+# Reqnroll / SpecFlow generated files
+*.feature.cs
+
+# Playwright
+**/bin/**/playwright.ps1
+.playwright/
+
+# BrowserStack
+log/
+local.log
+.browserstack/
+
+# Environment
+.env
+
+# OS
+.DS_Store
