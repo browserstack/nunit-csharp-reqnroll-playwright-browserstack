@@ -1,7 +1,7 @@
 <Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <TargetFrameworks>net6.0;net8.0</TargetFrameworks>
+    <TargetFrameworks>net6.0;net8.0;net9.0;net10.0</TargetFrameworks>
     <RootNamespace>ReqnrollPlaywrightBrowserStack</RootNamespace>
     <AssemblyName>ReqnrollPlaywrightBrowserStack</AssemblyName>
     <ImplicitUsings>enable</ImplicitUsings>
@@ -12,7 +12,6 @@
 
   <ItemGroup>
     <PackageReference Include="BrowserStack.TestAdapter" Version="0.*" />
-    <PackageReference Include="BrowserStackLocal" Version="2.0.0" />
     <PackageReference Include="Microsoft.NET.Test.Sdk" Version="17.1.0" />
     <PackageReference Include="Microsoft.Playwright" Version="1.40.0" />
     <PackageReference Include="Microsoft.Playwright.NUnit" Version="1.40.0" />

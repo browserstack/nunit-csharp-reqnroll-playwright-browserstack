@@ -3,7 +3,7 @@ accessKey: YOUR_ACCESS_KEY
 projectName: BrowserStack Samples
 buildName: browserstack build
 buildIdentifier: '#${BUILD_NUMBER}'
-framework: nunit
+# NOTE: no framework: key — the C# SDK auto-detects from the NuGet package (Reqnroll/NUnit).
 platforms:
   - os: OS X
     osVersion: Big Sur
@@ -19,7 +19,7 @@ platforms:
 parallelsPerPlatform: 1
 browserstackAutomation: true
 browserstackLocal: true
-source: nunit-csharp-reqnroll-playwright-browserstack:sample-sdk:v1.0
+source: nunit:sample-sdk:v1.0
 testObservability: true
 debug: false
 networkLogs: false

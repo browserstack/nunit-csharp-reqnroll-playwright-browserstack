@@ -22,7 +22,16 @@ jobs:
       max-parallel: 3
       matrix:
         os: [windows-latest]
-        dotnet: ['8.0.x']
+        dotnet: ['6.0.x', '8.0.x', '9.0.x', '10.0.x']
+        include:
+          - dotnet: '6.0.x'
+            target-framework: 'net6.0'
+          - dotnet: '8.0.x'
+            target-framework: 'net8.0'
+          - dotnet: '9.0.x'
+            target-framework: 'net9.0'
+          - dotnet: '10.0.x'
+            target-framework: 'net10.0'
     name: nunit-reqnroll .NET ${{ matrix.dotnet }} sample
     env:
       BROWSERSTACK_USERNAME: ${{ secrets.BROWSERSTACK_USERNAME }}
@@ -52,7 +61,7 @@ jobs:
           dotnet restore
       - name: Run sample test
         run: |
-          dotnet test
+          dotnet test --framework ${{ matrix.target-framework }}
       - name: Mark status check completed
         if: always()
         uses: actions/github-script@v7
