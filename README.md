@@ -4,6 +4,11 @@ This sample shows how to run [NUnit](https://nunit.org/) + [Reqnroll](https://re
 
 ![BrowserStack Logo](https://d98b8t1nnulk5.cloudfront.net/production/images/layout/logo-header.png?1469004780)
 
+## Prerequisites
+
+* [.NET SDK 8.0](https://dotnet.microsoft.com/download) (the project targets `net8.0`)
+* A BrowserStack account -- grab your [Username and Access Key](https://www.browserstack.com/accounts/settings)
+
 ## Run Sample Build
 
 * Clone the repo
