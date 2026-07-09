@@ -29,7 +29,16 @@ Understand how many parallel sessions you need by using our [Parallel Test Calcu
 
 ### Testing a private host (BrowserStack Local)
 
-If your app lives on `localhost`, a staging host, or behind a firewall, set `browserstackLocal: true` in `browserstack.yml` and rerun `dotnet test`. The SDK starts and stops the BrowserStack Local tunnel for you -- no manual binary download or lifecycle management. Then point your scenarios at `http://bs-local.com:<port>/` (a hostname BrowserStack Local resolves to your machine) instead of a public URL.
+Use this when the site under test is on `localhost`, a staging host, or behind a firewall. BrowserStack Local opens a secure tunnel and resolves `bs-local.com` back to your machine.
+
+The bundled `LocalSample` scenario navigates to `http://bs-local.com:45454/` and asserts the page title contains `BrowserStack Local` — so serve a matching page on port `45454` first (any page whose `<title>` contains "BrowserStack Local"):
+
+```sh
+mkdir -p bs-local-site && printf '<!doctype html><title>BrowserStack Local</title><body>OK</body>' > bs-local-site/index.html
+(cd bs-local-site && python3 -m http.server 45454) &
+```
+
+To test your own app instead, serve it on port `45454` (or change the port and the title assertion in `StepDefinitions/LocalSampleSteps.cs`). Then set `browserstackLocal: true` in `browserstack.yml` and rerun `dotnet test`. The SDK starts and stops the tunnel for you -- no manual binary download or lifecycle management; it routes `bs-local.com:45454` to your machine's `localhost:45454`.
 
 ## Integrate your test suite
 
