@@ -27,7 +27,7 @@ buildIdentifier: '#${BUILD_NUMBER}' # Supports strings along with either/both ${
 # Reqnroll (BDD layer) is auto-detected by the SDK on top of the runner declared here.
 framework: nunit
 
-source: nunit-csharp-reqnroll-playwright:sample-master:v1.0
+source: nunit-csharp-reqnroll-playwright-browserstack:sample-sdk:v1.0
 
 # =======================================
 # Platforms (Browsers / Devices to test)
